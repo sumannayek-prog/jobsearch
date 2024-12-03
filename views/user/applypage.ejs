@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-include("./common/header")%>
+
+<body>
+    
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
+            <h1 class="m-0 text-primary">JobEntry</h1>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="home" class="nav-item nav-link active">Home</a>
+                <a href="about" class="nav-item nav-link">About</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Jobs</a>
+                    <div class="dropdown-menu rounded-0 m-0">
+                        <a href="/joblist" class="dropdown-item">Job List</a>
+                        <a href="/details/:id" class="dropdown-item">Job Detail</a>
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu rounded-0 m-0">
+                        <a href="category.html" class="dropdown-item">Job Category</a>
+                        <a href="/blog" class="dropdown-item">Testimonial</a>
+                        <a href="404.html" class="dropdown-item">404</a>
+                    </div>
+                </div>
+                <a href="/contact" class="nav-item nav-link">Contact</a>
+                <a href="/" class="nav-item nav-link">Sign in || Log in</a>
+                
+            </div>
+        </div>
+    </nav>
+<div class="container" >
+    
+        <h4 class="mb-4" style="align-items: center; text-align: center;">Apply For The Job</h4>
+        <form action="/cly" method="post">
+            <div class="row g-3">
+                
+                <div class="col-6">
+                    <label for="">Jobtitle</label>
+                    <select class="custom-select" name="job_title">
+                        <option selected>jobtitle</option>
+                        <%if(job_data.length>0){
+                            for(let d of job_data){
+                                if(d.status){%>
+                        <option value="<%=d.jobtitle%>"><%=d.jobtitle%></option>
+                       <%}}}%>
+                      </select>
+                </div>
+                <div class="col-6">
+                    <label for="">Location</label>
+                    <select class="custom-select" name="location">
+                        <option selected>Location</option>
+                        <%if(job_data.length>0){
+                            for(let d of job_data){
+                                if(d.status){%>
+                        <option value="<%=d.location%>"><%=d.location%></option>
+                       <%}}}%>
+                      </select>
+                </div>
+                <div class="col-6">
+                    <label for="">Company</label>
+                    <select class="custom-select" name="job_company">
+                        <option selected>Company</option>
+                        <%if(job_data.length>0){
+                            for(let d of job_data){
+                                if(d.status){%>
+                        <option value="<%=d.company%>"><%=d.company%></option>
+                       <%}}}%>
+                      </select>
+                </div>
+                <div class="col-6">
+                    <label for="">Category</label>
+                    <select class="custom-select" name="category">
+                        <option selected>Category</option>
+                        <%if(job_data.length>0){
+                            for(let d of job_data){
+                                if(d.status){%>
+                        <option value="<%=d.category%>"><%=d.category%></option>
+                       <%}}}%>
+                      </select>
+                </div>
+                
+                <div class="">
+                    <textarea class="form-control" rows="5" cols="5" placeholder="Coverletter" name="sms"></textarea>
+                </div>
+                <div class="" style="align-items: center; text-align: center;">
+                    <button class="btn btn-primary" type="submit">Apply Now</button>
+                </div>
+            </div>
+        </form>
+</div>
+    
+
+    <%-include("./common/footer")%>
+</body>
+</html>
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="user/lib/wow/wow.min.js"></script>
+<script src="user/lib/easing/easing.min.js"></script>
+<script src="user/lib/waypoints/waypoints.min.js"></script>
+<script src="user/lib/owlcarousel/owl.carousel.min.js"></script>
+
+<!-- Template Javascript -->
+<script src="user/js/main.js"></script>

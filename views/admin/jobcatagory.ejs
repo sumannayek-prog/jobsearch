@@ -1,0 +1,51 @@
+<%-include('./common/header')%> 
+<body>
+    <%- include('./common/navbar')%>
+
+        <%- include('./common/sidebar')%>
+
+        <main id="main" class="main">
+            <h2>Job catagory Page</h2><br>
+            <div class="container">
+                <a class="btn btn-success" href="addjobcatagory">Add Job Catagory</a>
+                <br><hr>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col" style="text-align: center; align-items: center;">ID</th>
+                            <th scope="col" style="text-align: center; align-items: center;">Job-Title</th>
+                            <th scope="col" style="text-align: center; align-items: center;" colspan="2">ACTION</th>
+                        </tr>
+                    </thead>
+                    <% let id=0; if(jobcatagorydata.length > 0) {%> 
+                    <tbody>
+                        <% for(let item of jobcatagorydata) {%>
+                        <tr>
+                            <td style="align-items: center;text-align: center;"><%= ++id%></td>
+                            <td style="text-align: center; align-items: center;"><%= item.jobcatagoryname%></td>
+                            <% if (item.status==0) {%>
+                            <td style="align-items: center; text-align:center;"> <a href="deactive<%=item._id%>"><i style="font-size: 2rem;color: rgb(0, 17, 255);" class="bi bi-toggle-off"></i></a> </td>
+                                <%}else{%>
+                            <td style="align-items: center; text-align:center;"> <a href="active<%=item._id%>"><i style="font-size: 2rem;color: rgb(9, 255, 0);" class="bi bi-toggle-on"></i></a></td>
+                            <%}%>
+                            <td style="text-align: center; align-items: center;"><a href="deletejob<%=item._id%>">DELETE</a></td>
+                        </tr>
+                        <% } %>
+                    </tbody>
+                    <% } %>
+                </table>
+
+            </div>
+        </main>
+</body>
+<script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/chart.js/chart.umd.js"></script>
+<script src="assets/vendor/echarts/echarts.min.js"></script>
+<script src="assets/vendor/quill/quill.min.js"></script>
+<script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+<script src="assets/vendor/tinymce/tinymce.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+
+<!-- Template Main JS File -->
+<script src="assets/js/main.js"></script> 

@@ -1,0 +1,46 @@
+
+
+<%-include('./common/header')%> 
+<body>
+    <%-include("./common/navbar")%>
+    <%-include("./common/sidebar")%>
+
+    <main id="main" class="main">
+      <h2>Contact Page</h2><br>
+    <div  class="container">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                <th style="text-align: center; align-items: center;" scope="col">Id</th>              
+                <th style="align-items: center; text-align: center;" scope="col" scope="col">Name</th>
+                <th style="align-items: center; text-align: center;" scope="col" scope="col">Email</th>          
+                <th style="align-items: center; text-align: center;" scope="col" scope="col">Message</th>          
+              </tr>
+            </thead>           
+            <tbody>
+              <% let id = 0; for (let item of Contact)  {%>            
+                <tr>
+                <td style="text-align: center; align-items: center;" scope="col"><%= ++id%></td> 
+                <td style="text-align: center; align-items: center;" scope="col"><%= item.name%></td>   
+                <td style="align-items: center; text-align: center;" scope="row"><%= item.email%></td>
+                <td style="align-items: center; text-align: center;" scope="row"><%= item.sms%></td>                            
+              </tr>           
+               <% } %>
+              </table>
+            </div>
+    
+    
+          </main>
+    </body>
+    <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/chart.js/chart.umd.js"></script>
+    <script src="assets/vendor/echarts/echarts.min.js"></script>
+    <script src="assets/vendor/quill/quill.min.js"></script>
+    <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+ 

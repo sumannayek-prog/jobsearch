@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-include("./common/header")%>
+
+<body>
+    
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center text-center py-0 px-4 px-lg-5">
+            <h1 class="m-0 text-primary">JobEntry</h1>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="home" class="nav-item nav-link active">Home</a>
+                <a href="about" class="nav-item nav-link">About</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Jobs</a>
+                    <div class="dropdown-menu rounded-0 m-0">
+                        <a href="/joblist" class="dropdown-item">Job List</a>
+                        
+                    </div>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu rounded-0 m-0">
+                        <a href="category.html" class="dropdown-item">Job Category</a>
+                        <a href="/blog" class="dropdown-item">Testimonial</a>
+                        <a href="404.html" class="dropdown-item">404</a>
+                    </div>
+                </div>
+                <a href="/contact" class="nav-item nav-link">Contact</a>
+                <!-- <a href="/" class="nav-item nav-link">Sign in || Log in</a> -->
+                <!-- <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><%=data.name%></a>
+                    <div class="dropdown-menu rounded-0 m-0">
+                        <a href="/logout" class="dropdown-item">Log out</a>
+                    </div>
+                    
+                </div> -->
+            </div>
+            <h6></h6>
+            <a href="/mloginpage" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Post A Job<i class="fa fa-arrow-right ms-3"></i></a>
+        </div>
+    </nav>
+
+    <!-- Job Detail Start -->
+    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+        
+        <div class="container">
+            <div class="row gy-5 gx-4">
+                <div class="col-lg-8">
+                    <div class="d-flex align-items-center mb-5">
+                        <img class="flex-shrink-0 img-fluid border rounded" src="/<%=jobdetailsdata.image%>" alt="" style="width: 80px; height: 80px;">
+                        <div class="text-start ps-4">
+                            <h3 class="mb-3"><%=jobdetailsdata.jobtitle%></h3>
+                            <span class="text-truncate me-3"><i class="fa fa-map-marker-alt text-primary me-2"></i><%=jobdetailsdata.location%></span>
+                            <span class="text-truncate me-3"><i class="far fa-clock text-primary me-2"></i><%=jobdetailsdata.job_nature%></span>
+                            <span class="text-truncate me-0"><i class="far fa-money-bill-alt text-primary me-2"></i><%=jobdetailsdata.salary%></span>
+                        </div>
+                    </div>
+
+                    <div class="mb-5">
+                        <h4 class="mb-3">Job description</h4>
+                        <p><%=jobdetailsdata.job_des%></p>
+                        <h4 class="mb-3">Responsibility</h4>
+                        <p><%=jobdetailsdata.job_des%></p>
+                        <ul class="list-unstyled">
+                            <li><i class="fa fa-angle-right text-primary me-2"></i>Dolor justo tempor duo ipsum accusam</li>
+                            <li><i class="fa fa-angle-right text-primary me-2"></i>Elitr stet dolor vero clita labore gubergren</li>
+                            <li><i class="fa fa-angle-right text-primary me-2"></i>Rebum vero dolores dolores elitr</li>
+                            <li><i class="fa fa-angle-right text-primary me-2"></i>Est voluptua et sanctus at sanctus erat</li>
+                            <li><i class="fa fa-angle-right text-primary me-2"></i>Diam diam stet erat no est est</li>
+                        </ul>
+                        <h4 class="mb-3">Qualifications</h4>
+                        <p><%=jobdetailsdata.job_qualification%></p>
+                        <ul class="list-unstyled">
+                            <li><i class="fa fa-angle-right text-primary me-2"></i>Dolor justo tempor duo ipsum accusam</li>
+                            <li><i class="fa fa-angle-right text-primary me-2"></i>Elitr stet dolor vero clita labore gubergren</li>
+                            <li><i class="fa fa-angle-right text-primary me-2"></i>Rebum vero dolores dolores elitr</li>
+                            <li><i class="fa fa-angle-right text-primary me-2"></i>Est voluptua et sanctus at sanctus erat</li>
+                            <li><i class="fa fa-angle-right text-primary me-2"></i>Diam diam stet erat no est est</li>
+                        </ul>
+                    </div>
+
+                    <a class="btn btn-primary" href="/apply">Apply job</a>
+                    
+                </div>
+    
+                <div class="col-lg-4">
+                    <div class="bg-light rounded p-5 mb-4 wow slideInUp" data-wow-delay="0.1s">
+                        <h4 class="mb-4">Job Summery</h4>
+                        <p><i class="fa fa-angle-right text-primary me-2"></i>Published On:<%=jobdetailsdata.createdAt%></p>
+                        <p><i class="fa fa-angle-right text-primary me-2"></i>Vacancy: 123 Position</p>
+                        <p><i class="fa fa-angle-right text-primary me-2"></i>Job Nature:<%=jobdetailsdata.job_nature%></p>
+                        <p><i class="fa fa-angle-right text-primary me-2"></i>Salary: <%=jobdetailsdata.salary%></p>
+                        <p><i class="fa fa-angle-right text-primary me-2"></i>Location: <%=jobdetailsdata.location%></p>
+                        <p class="m-0"><i class="fa fa-angle-right text-primary me-2"></i>Date Line: <%=jobdetailsdata.deadline%></p>
+                    </div>
+                    <div class="bg-light rounded p-5 wow slideInUp" data-wow-delay="0.1s">
+                        <h4 class="mb-4">Company Detail</h4>
+                        <p class="m-0"><%=jobdetailsdata.company%> <br> Ipsum dolor ipsum accusam stet et et diam dolores, sed rebum sadipscing elitr vero dolores. Lorem dolore elitr justo et no gubergren sadipscing, ipsum et takimata aliquyam et rebum est ipsum lorem diam. Et lorem magna eirmod est et et sanctus et, kasd clita labore.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Job Detail End -->
+
+    <%-include("./common/footer")%>
+</body>
+</html>
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="user/lib/wow/wow.min.js"></script>
+<script src="user/lib/easing/easing.min.js"></script>
+<script src="user/lib/waypoints/waypoints.min.js"></script>
+<script src="user/lib/owlcarousel/owl.carousel.min.js"></script>
+
+<!-- Template Javascript -->
+<script src="user/js/main.js"></script>

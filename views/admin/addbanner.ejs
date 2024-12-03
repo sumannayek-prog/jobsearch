@@ -1,0 +1,60 @@
+<%-include('./common/header')%>
+<body>
+  <%-include('./common/navbar')%>
+ 
+    <%-include('./common/sidebar')%> 
+ 
+    <main id="main" class="main">
+ 
+     
+       <h1>Banner Page</h1>
+       
+   <!-- End Page Title -->
+     
+     <div  class="container">
+       <div class="container">
+         <div class="card">
+           <div class="card-body">
+             <h5 class="card-title">Banner Form</h5>
+ 
+             <!-- Vertical Form -->
+             <form class="row g-3" method="post" action="createbanner" enctype="multipart/form-data">
+               <div class="col-12">
+                 <label for="inputNanme4" class="form-label">Title</label>
+                 <input type="text" class="form-control" name="title">
+               </div>
+               <div class="col-12">
+                 <label for="inputNanme4" class="form-label">Subtitle</label>
+                 <input type="text" class="form-control" name="subtitle">
+               </div>
+               <div class="col-12">
+                 <label for="inputNanme4" class="form-label">Image</label>
+                 <input type="file" class="form-control" name="image">
+               </div>
+               
+               <div class="text-center">
+                 <button type="submit" class="btn btn-primary">Submit</button>
+                 <button type="reset" class="btn btn-secondary">Reset</button>
+               </div>
+             </form><!-- Vertical Form -->
+ 
+           </div>
+         </div>
+ 
+       </div>
+     </div>
+ 
+ 
+   </main>
+ </body>
+ <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+ <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+ <script src="assets/vendor/chart.js/chart.umd.js"></script>
+ <script src="assets/vendor/echarts/echarts.min.js"></script>
+ <script src="assets/vendor/quill/quill.min.js"></script>
+ <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+ <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+ <script src="assets/vendor/php-email-form/validate.js"></script>
+ 
+ <!-- Template Main JS File -->
+ <script src="assets/js/main.js"></script>

@@ -1,0 +1,58 @@
+<%-include('./common/header')%> 
+<body>
+    <%- include('./common/navbar')%>
+
+        <%- include('./common/sidebar')%>
+
+        <main id="main" class="main">
+            <h2>Job Page</h2>
+            <div class="container">
+                <hr>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col" style="text-align: center; align-items: center;">ID</th>
+                            <th scope="col" style="text-align: center; align-items: center;">Job-Title</th>
+                            <th scope="col" style="text-align: center; align-items: center;">Job-Category</th>
+                            <th scope="col" style="text-align: center; align-items: center;">Company</th>
+                            <th scope="col" style="text-align: center; align-items: center;">Post date</th>
+                            <th scope="col" style="text-align: center; align-items: center;">Job-Nature</th>
+                            <th scope="col" style="text-align: center; align-items: center;" colspan="2">ACTION</th>
+                        </tr>
+                    </thead>
+                    <% let id=0; if(jobdata.length > 0) {%> 
+                    <tbody>
+                        <% for(let item of jobdata) {%>
+                        <tr>
+                            <td style="align-items: center;text-align: center;"><%= ++id%></td>
+                            <td style="text-align: center; align-items: center;"><%= item.jobtitle%></td>
+                            <td style="align-items: center;text-align: center;"><%= item.category%></td>
+                            <td style="align-items: center;text-align: center;"><%= item.company%></td>
+                            <td style="align-items: center;text-align: center;"><%= item.createdAt%></td>
+                            <td style="align-items: center;text-align: center;"><%= item.job_nature%></td>
+                            <% if (item.status==0) {%>
+                            <td style="align-items: center; text-align:center;"> <a href="deactive<%=item._id%>"><i style="font-size: 2rem;color: rgb(0, 17, 255);" class="bi bi-toggle-off"></i></a> </td>
+                                <%}else{%>
+                            <td style="align-items: center; text-align:center;"> <a href="active<%=item._id%>"><i style="font-size: 2rem;color: rgb(9, 255, 0);" class="bi bi-toggle-on"></i></a></td>
+                            <%}%>
+                            <td style="text-align: center; align-items: center;"><a href="deletejob<%=item._id%>">DELETE</a></td>
+                        </tr>
+                        <% } %>
+                    </tbody>
+                    <% } %>
+                </table>
+
+            </div>
+        </main>
+</body>
+<script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/chart.js/chart.umd.js"></script>
+<script src="assets/vendor/echarts/echarts.min.js"></script>
+<script src="assets/vendor/quill/quill.min.js"></script>
+<script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+<script src="assets/vendor/tinymce/tinymce.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+
+<!-- Template Main JS File -->
+<script src="assets/js/main.js"></script> 

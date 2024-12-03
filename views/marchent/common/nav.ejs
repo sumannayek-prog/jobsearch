@@ -1,0 +1,103 @@
+<header class="header">
+
+    
+
+    <div class="header_container background-color-orange-light">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                        <div class="logo_container">
+                            <a href="/">
+                                <img src="imags/logo.png" class="logo-text" alt="">
+                            </a>
+                        </div>
+                        
+                        
+
+                        <%if(!data){%>
+                        <nav class="main_nav_contaner ml-auto">
+                            <ul class="main_nav">
+                                <li><a href="/">Home</a></li>
+                               <li><a href="/job">Job</a></li>
+                               
+                                <li><a href="/about">About</a></li>
+                                <li><a href="/contact">Contact</a></li>
+
+                            </ul>
+                            
+                           <ul class="main_nav">
+                            <li></li>
+                            <li></li>
+                           </ul>
+                           
+                            <ul class="main_nav">
+                                <li><a href="/register">Signup/Signin</a></li>
+                            </ul>
+                            <div class="hamburger menu_mm menu-vertical">
+                                <i class="large material-icons font-color-white menu_mm menu-vertical">menu</i>
+                            </div>
+                        </nav>
+                        <%}else{%>
+                            <nav class="main_nav_contaner ml-auto">
+                                <ul class="main_nav">
+                                    <li><a href="/">Home</a></li>
+                                   <li><a href="/job">Job</a></li>
+                                   <%if(!data.isMarchent){%>
+                                    <li><a href="/appliedjobs">Applied Jobs</a></li>
+                                    <%}%>
+                                        
+                                        
+                                    <li><a href="/about">About</a></li>
+                                    <li><a href="/contact">Contact</a></li>
+             
+                                
+                                
+                                <%if(data.isEmployer){%>
+                                <div class=" Post-Jobs">
+                                    <a href="/postjob" class="">
+                                        Post Jobs
+                                    </a>
+                                
+                                </div>
+                                <%}%> 
+                                <li></li>
+                               <li style="color: white;">Hi <%=data.name%> </li>
+                                <ul class="main_nav"> 
+                                                                                
+                               
+                            </div>
+                    
+                        </ul>  
+                    </ul>
+                            </nav>
+                            <%}%>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
+        <div class="menu_close_container">
+            <div class="menu_close">
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <div class="search">
+            <form action="#" class="header_search_form menu_mm">
+                <input type="search" class="search_input menu_mm" placeholder="Search" required="required">
+                <button
+                    class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm">
+                    <i class="fa fa-search menu_mm" aria-hidden="true"></i>
+                </button>
+            </form>
+        </div>
+        
+    </div>
+</header>
